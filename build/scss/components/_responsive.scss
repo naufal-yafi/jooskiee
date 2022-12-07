@@ -1,0 +1,49 @@
+@import './../settings/paddingSection';
+
+// Festop FullHD
+@media screen and (min-width: 1441px) {
+    header {
+        padding: 0 $grid-fullhd;
+    }
+    main {
+        padding: 50px $grid-fullhd;
+    
+        .home {
+            .img-jumbotron {
+                right: $grid-fullhd;
+            }
+        }
+    }
+}
+
+// Dekstop MAC Display
+@media screen and (max-width: 1440px) and (min-width: 920px) {
+    header {
+        padding: 0 $grid-mac;
+    }
+    main {
+        padding: 50px $grid-mac;
+
+        .home {
+            .img-jumbotron {
+                right: $grid-mac;
+            }
+        }
+    }
+}
+
+// Mobile
+@media screen and (max-width: 900px) and (min-width: 300px) {
+    header {
+        padding: 0 $grid-mobile;
+    }
+    main {
+        padding: 50px $grid-mobile;
+    
+        .home {
+            .img-jumbotron {
+                right: $grid-mobile;
+            }
+        }
+    }
+}

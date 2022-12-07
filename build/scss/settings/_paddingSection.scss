@@ -1,0 +1,36 @@
+@import './colors';
+
+$grid-mac: 6%;
+$grid-fullhd: 15%;
+$grid-mobile: 2%;
+
+$navbar-section-DESKTOP: 220px;
+
+$navbar-link: 10px 20px;
+
+$border: 5px;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $background; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+      background: $neutral-300; 
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: $neutral-500; 
+  } 

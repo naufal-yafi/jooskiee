@@ -1,0 +1,90 @@
+@import './settings/properties';
+@import './settings/paddingSection';
+@import './settings/colors';
+@import './components/typography';
+@import './components/buttons';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 500vh;
+    background: $background;
+    font-family: Poppins-Reguler;
+}
+
+header {
+    @include all-center();
+    justify-content: space-between;
+    padding: 0 $grid-fullhd;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    background: $background;
+    z-index: 999;
+
+    @import './components/navbar';
+}
+
+main {
+    padding: 50px $grid-fullhd;
+
+    .home {
+        padding-top: 80px;
+        .location {
+            @include flex();
+            justify-content: flex-start;
+            gap: 15px;
+            @include TextStyle($style: Label, $color: $neutral-300);
+            height: 22px;
+        }
+    
+        .text-jumbotron {
+            @include TextStyle($style: Display);
+    
+            .products-sold {
+                color: $primary-700;
+            }
+        }
+    
+        .img-jumbotron {
+            position: absolute;
+            right: $grid-fullhd;
+        }
+    
+        .description {
+            margin-top: 45px;
+            width: 55%;
+            @include TextStyle($color: $neutral-400);
+    
+            strong {
+                color: $primary-700;
+            }
+        }
+    
+        .btn-group {
+            @include all-center();
+            justify-content: flex-start;
+            margin-top: 55px;
+            gap: 25px;
+    
+            .btn {
+                &.outline-no-icon {
+                    @include Button($size: large, $type: outline);
+                }
+                
+                &.primary-with-icon {
+                    @include Button($size: large, $atribute: withIcon);
+                }
+            }
+    
+        }
+    }
+
+}
+
+@import './components/responsive';

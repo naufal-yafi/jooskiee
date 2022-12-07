@@ -1,0 +1,75 @@
+@import './../settings/importFonts';
+@import './../settings/fontSize';
+@import './../settings/colors';
+
+@mixin Display() {
+    font-family: Coolvetica;
+    font-size: $display;
+    line-height: 130%;
+    letter-spacing: 0.5rem;
+}
+
+@mixin Heading-1() {
+    font-family: Coolvetica;
+    font-size: $heading-1;
+    line-height: 140%;
+    letter-spacing: 0.5rem;
+}
+@mixin Heading-2() {
+    font-family: Poppins-Reguler;
+    font-size: $heading-2;
+    line-height: 140%;
+    letter-spacing: 0.5rem;
+}
+@mixin Heading-3() {
+    font-family: Poppins-Reguler;
+    font-size: $heading-3;
+    line-height: 140%;
+    letter-spacing: 0.5rem;
+}
+
+@mixin Body() {
+    font-family: Poppins-Reguler;
+    font-size: $body;
+    line-height: 150%;
+}
+
+@mixin Label() {
+    font-family: Poppins-Reguler;
+    font-size: $label;
+    line-height: 140%;
+}
+
+@mixin Caption() {
+    font-family: Poppins-Reguler;
+    font-size: $label;
+    line-height: 140%;
+}
+
+@mixin TextStyle($style: body, $color: $neutral-500, $fontWeight: Reguler) {
+    @if $style == Display {
+        @include Display();
+    } @else if $style == H1 {
+        @include Heading-1();
+    } @else if $style == H2 {
+        @include Heading-1();
+    } @else if $style == H3 {
+        @include Heading-1();
+    } @else if $style == Label {
+        @include Label();
+        
+        @if $fontWeight != Reguler {
+            font-family: Poppins-Bold
+        }
+    } @else if $style == Caption {
+        @include Caption();
+        
+        @if $fontWeight != Reguler {
+            font-family: Poppins-Bold
+        }
+    } @else {
+        @include Body();
+    }
+
+    color: $color;
+}

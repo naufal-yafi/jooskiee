@@ -1,0 +1,35 @@
+@import './buttons';
+@import './typography';
+
+nav {
+    width: auto;
+    ul {
+        @include all-center();
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 45px;
+
+        li {
+            cursor: pointer;
+            @include TextStyle($style: Caption, $color: $neutral-300);
+            list-style: none;
+            
+            .btn {
+                &.tab-nav {
+                    @include Button($type: secondary, $size: medium);
+                }
+            }
+            
+            &.nav-link {
+                &.active {
+                    @include TextStyle($style: Label, $fontWeight: bold);
+                }
+            }
+
+            &:hover {
+                color: $neutral-500;
+            }
+
+        }
+    }
+}

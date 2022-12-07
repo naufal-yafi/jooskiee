@@ -1,0 +1,68 @@
+@import './../settings/colors';
+@import './../settings/buttonSize';
+@import './../settings/fontSize';
+
+button {
+    border: none;
+    background: red;
+
+    &.btn {
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: Poppins-Reguler;
+        transition: .3s;
+    }
+}
+
+@mixin Button($size: small, $atribute: none, $type: primary) {
+
+    @if $size == large {
+        @if $atribute == withIcon {
+            @include flex();
+            gap: 10px;
+            padding: $ele-withIcon-btn-large;
+        } @else {
+            padding: $ele-btn-large;  
+        } 
+        font-size: $txt-btn-large;
+    } @else if  $size == medium  {
+        padding: $ele-btn-medium;
+        font-size: $txt-btn-medium;
+    } @else {
+        padding: $ele-btn-small;
+        font-size: $txt-btn-small;
+    } 
+
+    @if $type == secondary {
+        background: $primary-100;
+        border: 1px solid $primary-100;
+        color: $primary-800;
+        
+        &:hover {
+            border: 1px solid $primary-50;
+            background: $primary-50;
+            color: $primary-900;
+        }
+    } @else if $type == outline {
+        background: none;
+        border: 1px solid $neutral-700;
+        color: $neutral-700;
+
+        &:hover {
+            border: 1px solid $primary-100;
+            background: $primary-100;
+            color: $primary-900;
+        }
+    } @else {
+        background: $primary-700;
+        border: 1px solid $primary-700;
+        color: $primary-50;
+        
+        &:hover {
+            border: 1px solid $primary-900;
+            background: $primary-900;
+            color: $primary-50;
+        }
+    }
+    
+}
