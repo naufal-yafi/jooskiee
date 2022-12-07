@@ -35,6 +35,11 @@ main {
 
     .home {
         padding-top: 80px;
+
+        .break {
+            display: none;
+        }
+
         .location {
             @include flex();
             justify-content: flex-start;

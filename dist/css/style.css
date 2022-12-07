@@ -141,6 +141,9 @@ main {
 main .home {
   padding-top: 80px;
 }
+main .home .break {
+  display: none;
+}
 main .home .location {
   display: flex;
   justify-content: center;
@@ -258,12 +261,70 @@ main .home .btn-group .btn.primary-with-icon:hover {
 }
 @media screen and (max-width: 900px) and (min-width: 300px) {
   header {
-    padding: 0 2%;
+    padding: 0 4%;
+    height: 70px;
+  }
+  header nav {
+    width: auto;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    transform: translateY(47vh);
+  }
+  header nav ul {
+    align-items: flex-end;
+    background: #ECF0F1;
+    padding: 15px 35px;
+    flex-direction: column;
+  }
+  header nav ul li {
+    width: 100%;
   }
   main {
-    padding: 50px 2%;
+    padding: 50px 4%;
+  }
+  main .home {
+    flex-direction: column;
+    padding-top: 25px;
+  }
+  main .home .location {
+    margin-bottom: 6px;
+  }
+  main .home .break {
+    display: block;
+  }
+  main .home .text-jumbotron {
+    width: auto;
+    font-size: 42px;
+    letter-spacing: 0.2rem;
+    line-height: 120%;
   }
   main .home .img-jumbotron {
-    right: 2%;
+    display: none;
+    position: static;
+  }
+  main .home .description {
+    width: auto;
+    margin-top: 15px;
+    font-size: 18px;
+  }
+  main .home .btn-group {
+    flex-direction: column;
+    margin-top: 35px;
+    gap: 15px;
+  }
+  main .home .btn-group .btn {
+    width: 100%;
+  }
+  main .home .btn-group .btn img {
+    height: 22px;
+  }
+}
+@media screen and (max-width: 300px) {
+  header {
+    display: none;
+  }
+  main {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

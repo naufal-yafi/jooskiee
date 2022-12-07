@@ -36,14 +36,79 @@
 @media screen and (max-width: 900px) and (min-width: 300px) {
     header {
         padding: 0 $grid-mobile;
+        height: 70px;
+
+        nav {
+            width: auto;
+            height: 100vh;
+            position: absolute;
+            right: 0;
+            transform: translateY(47vh);
+            
+            ul {
+                align-items: flex-end;
+                background: $background;
+                padding: 15px 35px;
+                flex-direction: column;
+
+                li {
+                    width: 100%;
+                }
+            }
+        }
     }
     main {
         padding: 50px $grid-mobile;
     
         .home {
+            flex-direction: column;
+            padding-top: 25px;
+
+            .location {
+                margin-bottom: 6px;
+            }
+            
+            .break {
+                display: block;
+            }
+            .text-jumbotron {
+                width: auto;
+                font-size: 42px;
+                letter-spacing: 0.2rem;
+                line-height: 120%;
+            }
             .img-jumbotron {
-                right: $grid-mobile;
+                display: none;
+                position: static;
+            }
+
+            .description {
+                width: auto;
+                margin-top: 15px;
+                font-size: 18px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                margin-top: 35px;
+                gap: 15px;
+
+                .btn {
+                    width: 100%;
+
+                    img {
+                        height: 22px;
+                    }
+                }
             }
         }
     }
+}
+
+@media screen and (max-width: 300px) {
+    header {
+        display: none;
+    }
+
+    main {display: none;}
 }
